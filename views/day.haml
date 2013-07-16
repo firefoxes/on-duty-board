@@ -18,3 +18,7 @@
               .member
                 %img.avatar{src: member.avatar_url}
                 %span.name= member.full_name
+
+    .perlisism
+      = perlisms.random_quote
+      %span.author= "- #{perlisms.full_name}"

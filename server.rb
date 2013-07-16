@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'haml'
 
+require './perlisms'
 require './timeslots'
 require './mock_timeslots'
 
@@ -25,6 +26,10 @@ helpers do
 
   def current_day_of_week
     Time.now.strftime("%A")
+  end
+
+  def perlisms
+    Perlisms
   end
 
 end
