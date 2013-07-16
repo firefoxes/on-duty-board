@@ -1,0 +1,20 @@
+!!! 5
+%html
+  %head
+    %title= "Phase 4 On Duty"
+    %link{href: "/css/main.css", media: "screen", rel: "stylesheet"}
+    / 5 mins == 250 seconds
+    %meta{'http-equiv' => "refresh", content: 250}
+  %body
+    %header
+      %h1 Phase 4 Students On Duty for #{ current_day_of_week }
+
+    .container
+      - for timeslot in todays_timeslots
+        .timeslot{:class => ( 'current' if timeslot.current? )}
+          %h3.name= timeslot.name
+          .members
+            - for member in timeslot.members
+              .member
+                %img.avatar{src: member.avatar_url}
+                %span.name= member.full_name
