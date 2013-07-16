@@ -9,7 +9,7 @@ module Perlisms
 
   extend self
 
-  PERLISMS = File.read(__FILE__).split(/^__END__/, 2).last.
+  PERLISMS = File.read(__FILE__).split(/^__END__/).last.
     # split into lines
     lines.
     # remove extra trailing newlines
